@@ -18,7 +18,7 @@ const team = [
   },
   {
     name: "Dr. Marisol Campos Navarrete",
-    role: "Co-Founder & Director of Content & Instructional Design",
+    role: "Co-Founder & Director of Content Strategy",
     bio: "Leads content architecture, instructional design, and user-focused content strategy across all projects. Specializes in translating complex subject matter into clear, accessible digital experiences for public and institutional audiences.",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/CU5JQUQHP3FutNoS5xA4np/marisol-navarrete_4717efd6.png",
   },
