@@ -14,7 +14,10 @@
     { "source": "/vault/", "destination": "/vault/index.html" },
     { "source": "/gtalenders", "destination": "/gtalenders/index.html" },
     { "source": "/gtalenders/", "destination": "/gtalenders/index.html" },
-    { "source": "/gtalenders/:path*", "destination": "/gtalenders/index.html" }
+    { "source": "/gtalenders/:path*", "destination": "/gtalenders/index.html" },
+    { "source": "/duck/website", "destination": "/duck/website/index.html" },
+    { "source": "/duck/website/", "destination": "/duck/website/index.html" },
+    { "source": "/duck/website/:path*", "destination": "/duck/website/index.html" }
   ],
   "redirects": [
     { "source": "/bb", "destination": "/bb/proposal", "permanent": false },
