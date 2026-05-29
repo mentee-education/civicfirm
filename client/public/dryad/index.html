@@ -715,8 +715,6 @@
         <button class="tab-button" role="tab" aria-selected="false" data-target="experience">Experience</button>
         <button class="tab-button" role="tab" aria-selected="false" data-target="investment">Bid</button>
         <button class="tab-button" role="tab" aria-selected="false" data-target="next">Next Steps</button>
-        <a class="email-button" href="mailto:partnerships@dryad.org?subject=CivicFirm%20Proposal%20for%20Dryad%20Brand%20Refresh%20and%20Logo%20Redesign">Email Dryad</a>
-        <button class="print-button" type="button" onclick="window.print()">Print / Save</button>
       </nav>
     </div>
   </header>
@@ -1024,16 +1022,14 @@
     </section>
   </main>
 
-  <button class="show-all-toggle" type="button" id="showAllButton">Show full proposal</button>
 
   <footer class="footer">
-    <p><strong>Prepared by CivicFirm.</strong> This HTML proposal is self-contained, responsive, and print-friendly. Replace bracketed contact details before submission. If desired, use the “Print / Save” control to export a PDF from the browser print dialog, or send the HTML file directly as a polished digital response.</p>
+    <p><strong>Prepared by CivicFirm.</strong> This proposal was created as a focused digital response for Dryad’s brand refresh and logo redesign RFP. The page is designed for direct review at <a href="https://civicfirm.com/dryad">civicfirm.com/dryad</a>.</p>
   </footer>
 
   <script>
     const buttons = Array.from(document.querySelectorAll('.tab-button'));
     const sections = Array.from(document.querySelectorAll('.section'));
-    const showAllButton = document.getElementById('showAllButton');
 
     function showSection(id) {
       document.body.classList.remove('show-all');
@@ -1041,21 +1037,12 @@
       buttons.forEach(button => button.setAttribute('aria-selected', button.dataset.target === id ? 'true' : 'false'));
       const target = document.getElementById(id);
       if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      showAllButton.textContent = 'Show full proposal';
     }
 
     buttons.forEach(button => {
       button.addEventListener('click', () => showSection(button.dataset.target));
     });
 
-    showAllButton.addEventListener('click', () => {
-      const showingAll = document.body.classList.toggle('show-all');
-      sections.forEach(section => section.classList.toggle('active', showingAll ? false : section.id === 'understanding'));
-      buttons.forEach(button => button.setAttribute('aria-selected', 'false'));
-      showAllButton.textContent = showingAll ? 'Show section tabs' : 'Show full proposal';
-      if (showingAll) document.getElementById('proposal').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      else showSection('understanding');
-    });
   </script>
 </body>
 </html>
