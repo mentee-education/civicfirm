@@ -4,6 +4,8 @@
   "outputDirectory": "dist",
   "installCommand": "pnpm install",
   "rewrites": [
+    { "source": "/dryad", "destination": "/dryad/index.html" },
+    { "source": "/dryad/", "destination": "/dryad/index.html" },
     { "source": "/bb/intake", "destination": "/index.html" },
     { "source": "/bb/intake/", "destination": "/index.html" },
     { "source": "/bb/proposal", "destination": "/bb/proposal/index.html" },

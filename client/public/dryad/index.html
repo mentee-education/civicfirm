@@ -1,0 +1,1063 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CivicFirm Proposal for Dryad Brand Refresh and Logo Redesign</title>
+  <meta name="description" content="A CivicFirm proposal response to Dryad's request for proposals for a brand refresh, logo redesign, accessible web redesign, and marketing templates." />
+  <style>
+    :root {
+      --ink: #111715;
+      --forest: #0f3d2e;
+      --green: #00a95c;
+      --green-dark: #007a45;
+      --teal: #006e87;
+      --blue: #113f67;
+      --mint: #ddf7e9;
+      --sky: #e8f6fb;
+      --ivory: #fbf8ef;
+      --paper: #ffffff;
+      --muted: #5f6f69;
+      --line: #d7e2dc;
+      --gold: #c99b3f;
+      --shadow: 0 22px 70px rgba(8, 31, 24, 0.14);
+      --radius-xl: 28px;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --max: 1180px;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      --serif: Georgia, "Times New Roman", serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(0,169,92,0.16), transparent 28rem),
+        radial-gradient(circle at 88% 8%, rgba(0,110,135,0.13), transparent 32rem),
+        linear-gradient(180deg, #f8fbf7 0%, var(--ivory) 48%, #f5faf7 100%);
+      font-family: var(--sans);
+      line-height: 1.58;
+    }
+
+    a { color: var(--teal); text-decoration-thickness: 0.08em; text-underline-offset: 0.18em; }
+    a:hover { color: var(--green-dark); }
+    strong { font-weight: 760; }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 0;
+      background: var(--ink);
+      color: white;
+      padding: 0.8rem 1rem;
+      z-index: 1000;
+    }
+    .skip-link:focus { left: 1rem; top: 1rem; border-radius: 8px; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(251, 248, 239, 0.88);
+      border-bottom: 1px solid rgba(15, 61, 46, 0.12);
+    }
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0.82rem 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 0.78rem;
+      min-width: 220px;
+    }
+    .mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--green), var(--forest));
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 900;
+      letter-spacing: -0.08em;
+      box-shadow: 0 8px 22px rgba(0, 169, 92, 0.28);
+    }
+    .brand-title { font-weight: 850; letter-spacing: -0.035em; line-height: 1; }
+    .brand-subtitle { color: var(--muted); font-size: 0.78rem; margin-top: 0.1rem; }
+    .nav-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+    button.tab-button, .print-button, .email-button {
+      appearance: none;
+      border: 1px solid rgba(15, 61, 46, 0.16);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.72);
+      color: var(--forest);
+      font-weight: 720;
+      font-size: 0.82rem;
+      padding: 0.58rem 0.82rem;
+      cursor: pointer;
+      transition: 150ms ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    button.tab-button:hover, .print-button:hover, .email-button:hover,
+    button.tab-button[aria-selected="true"] {
+      background: var(--forest);
+      color: white;
+      border-color: var(--forest);
+      transform: translateY(-1px);
+    }
+    .email-button { background: var(--green); border-color: var(--green); color: #fff; }
+
+    .hero {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 4.6rem 1.2rem 2rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.22fr 0.78fr;
+      gap: 1.4rem;
+      align-items: stretch;
+    }
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      color: white;
+      padding: clamp(2rem, 5vw, 4.4rem);
+      min-height: 620px;
+      background:
+        linear-gradient(135deg, rgba(17,23,21,0.96), rgba(15,61,46,0.92)),
+        radial-gradient(circle at 74% 20%, rgba(0,169,92,0.38), transparent 20rem);
+      box-shadow: var(--shadow);
+    }
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      opacity: 0.16;
+      background-image:
+        linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+      background-size: 52px 52px;
+      transform: rotate(-4deg);
+    }
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      right: -110px;
+      bottom: -130px;
+      width: 430px;
+      height: 430px;
+      border: 1px solid rgba(221,247,233,0.28);
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 32px rgba(0,169,92,0.07), inset 0 0 0 76px rgba(0,110,135,0.05);
+    }
+    .hero-content { position: relative; z-index: 2; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.42rem 0.74rem;
+      border: 1px solid rgba(221,247,233,0.22);
+      border-radius: 999px;
+      color: #dff7e8;
+      background: rgba(255,255,255,0.06);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 6px rgba(0,169,92,0.17);
+    }
+    h1 {
+      font-size: clamp(3rem, 7.2vw, 6.6rem);
+      line-height: 0.9;
+      letter-spacing: -0.075em;
+      margin: 1.4rem 0 1.15rem;
+      max-width: 900px;
+    }
+    .lede {
+      font-size: clamp(1.12rem, 2vw, 1.5rem);
+      max-width: 780px;
+      color: rgba(255,255,255,0.84);
+      margin: 0 0 2rem;
+    }
+    .meta-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-top: 2.4rem;
+    }
+    .meta-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 18px;
+      padding: 1rem;
+    }
+    .meta-card span { display: block; color: rgba(255,255,255,0.62); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 800; }
+    .meta-card strong { display: block; color: white; margin-top: 0.2rem; font-size: 0.97rem; }
+
+    .side-stack { display: grid; gap: 1.1rem; }
+    .summary-card, .quote-card, .toc-card {
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(15, 61, 46, 0.12);
+      box-shadow: 0 18px 52px rgba(8, 31, 24, 0.08);
+      padding: 1.35rem;
+    }
+    .summary-card h2, .quote-card h2, .toc-card h2 { font-size: 1.05rem; margin: 0 0 0.75rem; letter-spacing: -0.02em; }
+    .quote-card {
+      background: linear-gradient(180deg, var(--mint), #fff);
+      border-color: rgba(0,169,92,0.22);
+    }
+    .quote-card blockquote {
+      margin: 0;
+      color: var(--forest);
+      font-family: var(--serif);
+      font-size: 1.08rem;
+      line-height: 1.55;
+    }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1rem; }
+    .pill {
+      display: inline-flex;
+      border: 1px solid rgba(0, 110, 135, 0.16);
+      background: var(--sky);
+      color: var(--blue);
+      border-radius: 999px;
+      padding: 0.35rem 0.62rem;
+      font-size: 0.78rem;
+      font-weight: 760;
+    }
+    .toc-card ol { margin: 0; padding-left: 1.2rem; color: var(--muted); }
+    .toc-card li { margin: 0.32rem 0; }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.2rem 4rem;
+    }
+    .section {
+      display: none;
+      margin: 1.4rem 0;
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(15, 61, 46, 0.12);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .section.active, body.show-all .section { display: block; }
+    .section-header {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 2rem;
+      padding: clamp(1.7rem, 4vw, 3rem);
+      background:
+        linear-gradient(135deg, rgba(221,247,233,0.8), rgba(232,246,251,0.64)),
+        linear-gradient(180deg, #fff, #fff);
+      border-bottom: 1px solid var(--line);
+    }
+    .section-kicker { color: var(--green-dark); font-weight: 850; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.78rem; margin-bottom: 0.5rem; }
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.02;
+      letter-spacing: -0.058em;
+      margin: 0;
+      color: var(--forest);
+    }
+    .section-header p { margin: 0; color: #33443d; font-size: 1.05rem; }
+    .section-body { padding: clamp(1.5rem, 4vw, 3rem); }
+    .prose { max-width: 860px; }
+    .prose p { margin: 0 0 1.05rem; color: #24342e; }
+    .lead-paragraph { font-size: 1.18rem; color: var(--forest) !important; }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: #fff;
+      padding: 1.25rem;
+      box-shadow: 0 10px 30px rgba(8, 31, 24, 0.05);
+    }
+    .card h3 { margin: 0 0 0.55rem; color: var(--forest); letter-spacing: -0.026em; font-size: 1.16rem; }
+    .card p { margin: 0; color: #394942; }
+    .number {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: var(--forest);
+      font-weight: 880;
+      margin-bottom: 0.75rem;
+    }
+    .phase-card:nth-child(2) .number { background: var(--teal); }
+    .phase-card:nth-child(3) .number { background: var(--green-dark); }
+    .phase-card:nth-child(4) .number { background: var(--blue); }
+    .phase-card:nth-child(5) .number { background: #6d5b1f; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(8,31,24,.05);
+    }
+    th, td { text-align: left; vertical-align: top; padding: 1rem; border-bottom: 1px solid var(--line); }
+    th { color: var(--forest); background: #eef8f2; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.055em; }
+    tr:last-child td { border-bottom: none; }
+    td { color: #2b3b35; }
+
+    .concept-intro {
+      margin-top: 1.4rem;
+      padding: 1rem 1.1rem;
+      border-left: 5px solid var(--green);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      background: linear-gradient(90deg, rgba(221,247,233,0.92), rgba(232,246,251,0.62));
+      color: #22332d;
+    }
+    .concept-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+    .concept-panel {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: #fff;
+      box-shadow: 0 16px 48px rgba(8,31,24,0.08);
+      min-height: 360px;
+    }
+    .concept-panel.wide { grid-column: 1 / -1; }
+    .concept-head {
+      padding: 1rem 1.1rem;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(135deg, #f9fffb, #eef8f2);
+    }
+    .concept-head span {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 0.28rem 0.55rem;
+      background: var(--forest);
+      color: #fff;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      font-weight: 850;
+      margin-bottom: 0.45rem;
+    }
+    .concept-head h3 { margin: 0; color: var(--forest); font-size: 1.08rem; letter-spacing: -0.025em; }
+    .concept-body { padding: 1.1rem; }
+    .logo-samples {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+    .logo-tile {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1rem 0.8rem;
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: linear-gradient(180deg, #fff, #f8fcfa);
+    }
+    .logo-mark-demo {
+      width: 86px;
+      height: 86px;
+      margin-bottom: 0.8rem;
+      border-radius: 26px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: radial-gradient(circle at 35% 30%, #39d982, #0f3d2e 68%);
+      font-size: 1.8rem;
+      font-weight: 950;
+      letter-spacing: -0.08em;
+      position: relative;
+      overflow: hidden;
+    }
+    .logo-mark-demo::after {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(255,255,255,0.42);
+      border-radius: 50%;
+      box-shadow: 18px 4px 0 -12px rgba(255,255,255,0.75), -14px 18px 0 -11px rgba(255,255,255,0.55), 24px 28px 0 -13px rgba(255,255,255,0.65);
+    }
+    .logo-mark-demo.alt { border-radius: 999px; background: radial-gradient(circle at 30% 30%, #e8f6fb, #006e87 68%); }
+    .logo-mark-demo.line { background: #fbf8ef; color: var(--forest); border: 2px solid var(--forest); }
+    .logo-tile strong { color: var(--forest); }
+    .logo-tile p { margin: 0.35rem 0 0; color: var(--muted); font-size: 0.86rem; }
+    .palette-row {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0.7rem;
+      margin-bottom: 1rem;
+    }
+    .swatch {
+      min-height: 122px;
+      border-radius: 18px;
+      padding: 0.7rem;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.22);
+      font-size: 0.76rem;
+      font-weight: 760;
+    }
+    .swatch small { opacity: 0.82; font-weight: 650; }
+    .type-demo {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1rem;
+      background: #fbfefa;
+    }
+    .type-demo .display { font-size: clamp(2rem, 4vw, 4rem); line-height: 0.92; letter-spacing: -0.075em; color: var(--forest); font-weight: 900; margin-bottom: 0.7rem; }
+    .type-demo .body { max-width: 700px; color: #33443d; }
+    .web-mock {
+      border: 1px solid #cfe0d7;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 12px 36px rgba(8,31,24,0.08);
+    }
+    .browser-bar {
+      height: 38px;
+      background: #eef4f0;
+      border-bottom: 1px solid #d6e5dd;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0 0.9rem;
+    }
+    .browser-dot { width: 9px; height: 9px; border-radius: 50%; background: #b7c7bf; }
+    .mock-hero {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      min-height: 330px;
+    }
+    .mock-left {
+      padding: 1.4rem;
+      background: linear-gradient(135deg, #0f3d2e, #113f67);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .mock-left::after {
+      content: "";
+      position: absolute;
+      right: -50px;
+      bottom: -50px;
+      width: 170px;
+      height: 170px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 28px rgba(0,169,92,0.14);
+    }
+    .mock-left h4 { font-size: 2.1rem; line-height: 0.95; letter-spacing: -0.06em; margin: 2rem 0 0.6rem; max-width: 360px; }
+    .mock-left p { color: rgba(255,255,255,0.82); margin: 0; max-width: 360px; }
+    .mock-right { padding: 1.2rem; background: #f8fcfa; }
+    .mock-search { background: white; border: 1px solid #d5e4dc; border-radius: 999px; padding: 0.72rem 0.9rem; color: #587067; margin-bottom: 1rem; }
+    .mock-card { background: white; border: 1px solid #dbe8e1; border-radius: 16px; padding: 0.9rem; margin-bottom: 0.7rem; }
+    .mock-card strong { color: var(--forest); display: block; }
+    .mock-card span { color: var(--muted); font-size: 0.85rem; }
+    .marketing-mocks {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 1rem;
+      align-items: stretch;
+    }
+    .social-card {
+      border-radius: 26px;
+      min-height: 360px;
+      background:
+        radial-gradient(circle at 83% 15%, rgba(0,169,92,0.28), transparent 9rem),
+        linear-gradient(135deg, #0f3d2e, #111715);
+      color: white;
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+    .social-card::after { content: ""; position: absolute; inset: auto -80px -80px auto; width: 220px; height: 220px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.25); }
+    .social-card h4 { font-size: 2.6rem; line-height: 0.9; letter-spacing: -0.07em; margin: 0; position: relative; z-index: 1; }
+    .social-card p { color: rgba(255,255,255,0.78); max-width: 310px; position: relative; z-index: 1; }
+    .slide-card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: #fff;
+      padding: 1.2rem;
+      min-height: 360px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 1rem;
+    }
+    .slide-title { font-size: 2.1rem; line-height: 1; letter-spacing: -0.06em; color: var(--forest); font-weight: 900; max-width: 450px; }
+    .slide-chart { display: grid; grid-template-columns: repeat(4, 1fr); align-items: end; gap: 0.55rem; min-height: 150px; padding: 0.8rem; background: #f4faf7; border-radius: 18px; }
+    .bar { border-radius: 999px 999px 6px 6px; background: linear-gradient(180deg, #00a95c, #006e87); min-height: 46px; }
+    .asset-caption { margin: 0.75rem 0 0; color: var(--muted); font-size: 0.88rem; }
+
+    .sample-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin-top: 1.25rem;
+    }
+    .sample-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, #fff, #f8fcfa);
+      padding: 1rem;
+      box-shadow: 0 10px 30px rgba(8, 31, 24, 0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      min-height: 260px;
+    }
+    .sample-tag {
+      color: var(--green-dark);
+      background: var(--mint);
+      border: 1px solid rgba(0,169,92,0.18);
+      border-radius: 999px;
+      padding: 0.28rem 0.52rem;
+      font-size: 0.68rem;
+      font-weight: 850;
+      letter-spacing: 0.055em;
+      text-transform: uppercase;
+      align-self: flex-start;
+    }
+    .sample-card h3 { margin: 0; color: var(--forest); letter-spacing: -0.03em; font-size: 1.08rem; }
+    .sample-card p { margin: 0; color: #3a4b44; font-size: 0.92rem; }
+    .sample-card .relevance { margin-top: auto; padding-top: 0.75rem; border-top: 1px solid var(--line); color: var(--blue); }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 0.75rem;
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 1rem;
+      align-items: start;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: #fff;
+    }
+    .week {
+      color: var(--green-dark);
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 0.82rem;
+    }
+    .timeline-item h3 { margin: 0 0 0.2rem; font-size: 1.04rem; color: var(--forest); }
+    .timeline-item p { margin: 0; color: #43544d; }
+
+    .investment {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 1rem;
+      align-items: stretch;
+    }
+    .price-card {
+      border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, var(--forest), #061b14);
+      color: #fff;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .price-card::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      top: -90px;
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      background: rgba(0,169,92,0.2);
+    }
+    .price-label { color: rgba(255,255,255,.65); text-transform: uppercase; letter-spacing: .08em; font-weight: 850; font-size: .78rem; }
+    .price { font-size: clamp(3rem, 7vw, 5.3rem); letter-spacing: -0.08em; font-weight: 900; line-height: .9; margin: 0.65rem 0; }
+    .price-card p { color: rgba(255,255,255,.82); margin: 0; }
+
+    .note {
+      border-left: 5px solid var(--green);
+      background: var(--mint);
+      padding: 1rem 1.15rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      color: var(--forest);
+      margin: 1.2rem 0;
+    }
+    .fineprint { color: var(--muted); font-size: 0.9rem; }
+    .source-list { font-size: 0.92rem; color: var(--muted); }
+    .source-list li { margin-bottom: 0.4rem; }
+
+    .closing {
+      border-radius: var(--radius-xl);
+      padding: clamp(2rem, 5vw, 4rem);
+      background: linear-gradient(135deg, #fff, var(--mint));
+      border: 1px solid rgba(0,169,92,.18);
+    }
+    .closing h2 { max-width: 760px; }
+    .contact-box {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin-top: 1.4rem;
+    }
+    .contact-box .card { min-height: 118px; }
+
+    .footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 2rem 1.2rem 4rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .show-all-toggle {
+      position: fixed;
+      right: 1.2rem;
+      bottom: 1.2rem;
+      z-index: 90;
+      border: none;
+      background: var(--green);
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.82rem 1rem;
+      font-weight: 850;
+      box-shadow: 0 14px 34px rgba(0,169,92,0.32);
+      cursor: pointer;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid, .section-header, .grid-2, .grid-3, .concept-gallery, .logo-samples, .palette-row, .mock-hero, .marketing-mocks, .sample-grid, .investment { grid-template-columns: 1fr; }
+      .hero-card { min-height: auto; }
+      .topbar-inner { align-items: flex-start; flex-direction: column; }
+      .nav-buttons { justify-content: flex-start; }
+      .meta-strip { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 1fr; }
+      .contact-box { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      body { background: #fff; color: #000; }
+      .topbar, .show-all-toggle, .skip-link { display: none !important; }
+      .hero { padding-top: 0; }
+      .hero-grid, .section-header, .grid-2, .grid-3, .concept-gallery, .logo-samples, .palette-row, .mock-hero, .marketing-mocks, .sample-grid, .investment, .contact-box { grid-template-columns: 1fr; }
+      .hero-card, .section, .card, table, .summary-card, .quote-card, .toc-card { box-shadow: none; }
+      .section { display: block !important; break-inside: avoid; margin: 1rem 0; }
+      .hero-card { min-height: auto; color: #000; background: #fff; border: 1px solid #ddd; }
+      .hero-card::before, .hero-card::after { display: none; }
+      .lede, .meta-card strong, .meta-card span { color: #000; }
+      .meta-card { border: 1px solid #ddd; background: #fff; }
+      a { color: #000; text-decoration: underline; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#proposal">Skip to proposal content</a>
+
+  <header class="topbar" aria-label="Proposal navigation">
+    <div class="topbar-inner">
+      <div class="brand-lockup" aria-label="CivicFirm proposal brand">
+        <div class="mark" aria-hidden="true">CF</div>
+        <div>
+          <div class="brand-title">CivicFirm</div>
+          <div class="brand-subtitle">Proposal for Dryad</div>
+        </div>
+      </div>
+      <nav class="nav-buttons" aria-label="Proposal sections" role="tablist">
+        <button class="tab-button" role="tab" aria-selected="true" data-target="understanding">Understanding</button>
+        <button class="tab-button" role="tab" aria-selected="false" data-target="approach">Approach</button>
+        <button class="tab-button" role="tab" aria-selected="false" data-target="deliverables">Deliverables</button>
+        <button class="tab-button" role="tab" aria-selected="false" data-target="timeline">Timeline</button>
+        <button class="tab-button" role="tab" aria-selected="false" data-target="experience">Experience</button>
+        <button class="tab-button" role="tab" aria-selected="false" data-target="investment">Bid</button>
+        <button class="tab-button" role="tab" aria-selected="false" data-target="next">Next Steps</button>
+        <a class="email-button" href="mailto:partnerships@dryad.org?subject=CivicFirm%20Proposal%20for%20Dryad%20Brand%20Refresh%20and%20Logo%20Redesign">Email Dryad</a>
+        <button class="print-button" type="button" onclick="window.print()">Print / Save</button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" aria-labelledby="proposal-title">
+    <div class="hero-grid">
+      <div class="hero-card">
+        <div class="hero-content">
+          <div class="eyebrow">Brand Refresh · Logo Redesign · Accessible Web System</div>
+          <h1 id="proposal-title">A clearer identity for trusted research data.</h1>
+          <p class="lede">CivicFirm proposes a collaborative, accessibility-centered brand refresh for Dryad that preserves the equity of a respected nonprofit data publisher while giving its visual identity, web templates, and marketing materials the clarity and sophistication required for its next stage of global service.</p>
+          <div class="meta-strip" aria-label="Proposal summary details">
+            <div class="meta-card"><span>Prepared for</span><strong>Dryad</strong></div>
+            <div class="meta-card"><span>Prepared by</span><strong>CivicFirm</strong></div>
+            <div class="meta-card"><span>Date</span><strong>May 29, 2026</strong></div>
+          </div>
+        </div>
+      </div>
+      <aside class="side-stack" aria-label="Proposal summary">
+        <div class="summary-card">
+          <h2>Executive summary</h2>
+          <p>Dryad is asking for more than a new mark. The opportunity is to translate nearly two decades of trusted service into a modern identity system that feels scholarly, human, accessible, and technically mature.</p>
+          <div class="pill-list" aria-label="Proposal themes">
+            <span class="pill">Nonprofit trust</span>
+            <span class="pill">Scholarly clarity</span>
+            <span class="pill">Hands-on curation</span>
+            <span class="pill">Accessible templates</span>
+            <span class="pill">Implementation handoff</span>
+          </div>
+        </div>
+        <div class="quote-card">
+          <h2>Our thesis</h2>
+          <blockquote>Dryad’s refreshed brand should feel like what Dryad already is: a community-serving, high-integrity research infrastructure partner that makes data publishing easier, more reliable, and more reusable.</blockquote>
+        </div>
+        <div class="toc-card">
+          <h2>Response contents</h2>
+          <ol>
+            <li>Understanding of Dryad’s need</li>
+            <li>Brand development approach</li>
+            <li>Detailed deliverables and illustrative concept samples</li>
+            <li>Suggested timeline</li>
+            <li>Relevant CivicFirm samples and experience</li>
+            <li>Bid and assumptions</li>
+            <li>Next steps</li>
+          </ol>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <main id="proposal">
+    <section class="section active" id="understanding" role="tabpanel" aria-labelledby="understanding-label">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker" id="understanding-label">01 · Understanding</div>
+          <h2>Dryad’s next identity should make its public value unmistakable.</h2>
+        </div>
+        <p>Dryad has grown from its roots in ecology and research-community coordination into an international nonprofit data publisher serving science and medicine. Its own RFP describes the desired shift: from a scrappy startup identity toward the presence of a premier global data publisher.</p>
+      </div>
+      <div class="section-body">
+        <div class="prose">
+          <p class="lead-paragraph">CivicFirm understands this project as an evolution, not a break. The refreshed brand should retain the trust already associated with Dryad while better expressing the organization’s current scale, technical maturity, and hands-on service model.</p>
+          <p>Dryad’s public platform currently leads with the promise <strong>“Trusted, simple, community driven”</strong> and explains its value through curation, quality control, straightforward compliance, and nonprofit stewardship. That foundation is strong. The refresh should make those qualities easier to recognize at a glance across the logo, color system, typography, web templates, presentation materials, and social media assets.</p>
+        </div>
+        <div class="grid-3" style="margin-top:1.25rem;">
+          <div class="card"><h3>Community interest</h3><p>The brand should communicate that Dryad is a nonprofit service operating in the public and scholarly interest, not a purely transactional technology vendor.</p></div>
+          <div class="card"><h3>Human curation</h3><p>The system should make visible the hands-on expertise of Dryad’s curators and the support researchers receive when publishing reusable data.</p></div>
+          <div class="card"><h3>Technical integrity</h3><p>The design language should feel rigorous, accessible, scalable, and appropriate for a trusted global research infrastructure organization.</p></div>
+        </div>
+        <div class="note"><strong>Co-design disclaimer:</strong> Any visual directions referenced in this response are offered as starting points for discussion. CivicFirm’s process is collaborative and co-designed with Dryad’s leadership, communications staff, and technical team; no design direction would be treated as final until it has been tested against audience needs, accessibility requirements, brand strategy, and implementation constraints.</div>
+      </div>
+    </section>
+
+    <section class="section" id="approach" role="tabpanel" aria-labelledby="approach-label">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker" id="approach-label">02 · Approach</div>
+          <h2>A structured process that turns strategy into implementation-ready design.</h2>
+        </div>
+        <p>Our approach is designed for stakeholder review, technical handoff, and accessibility from the beginning. Each phase produces usable artifacts and clear decision points so Dryad’s team can move confidently from discovery to implementation.</p>
+      </div>
+      <div class="section-body">
+        <div class="grid-3">
+          <div class="card phase-card"><div class="number">1</div><h3>Discovery and alignment</h3><p>We begin with a focused kickoff, stakeholder conversations, review of existing brand and website assets, audience mapping, and a shared definition of what the refreshed identity must accomplish.</p></div>
+          <div class="card phase-card"><div class="number">2</div><h3>Brand strategy foundation</h3><p>We translate findings into a practical brand brief covering positioning, tone, visual principles, accessibility considerations, and criteria for evaluating creative directions.</p></div>
+          <div class="card phase-card"><div class="number">3</div><h3>Logo and identity exploration</h3><p>We develop two to three concept routes for Dryad’s logo, color palette, typography, and graphic language, then refine the selected direction into a complete core identity system.</p></div>
+          <div class="card phase-card"><div class="number">4</div><h3>Accessible web template design</h3><p>We design implementation-ready page templates for priority content types, with responsive behavior, component notes, accessibility guidance, and collaboration with Dryad’s in-house technical team.</p></div>
+          <div class="card phase-card"><div class="number">5</div><h3>Marketing templates and handoff</h3><p>We create presentation and social media templates, finalize brand guidance, package source files, and support a handoff session so Dryad can implement and extend the system internally.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="deliverables" role="tabpanel" aria-labelledby="deliverables-label">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker" id="deliverables-label">03 · Deliverables</div>
+          <h2>The work will cover identity, web templates, marketing templates, and handoff.</h2>
+        </div>
+        <p>The proposed deliverables are mapped directly to Dryad’s RFP scope: core brand elements, accessible web redesign templates, and marketing materials in the same visual system.</p>
+      </div>
+      <div class="section-body">
+        <table aria-label="Proposed deliverables">
+          <thead><tr><th>Area</th><th>Included deliverables</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Core brand identity</strong></td><td>Updated logo system, logo lockups, color palette, typography recommendations, graphic motif direction, accessibility notes, and concise brand usage guidance.</td><td>Establish a recognizable identity that balances Dryad’s nonprofit roots, scholarly credibility, and technical sophistication.</td></tr>
+            <tr><td><strong>Accessible web redesign</strong></td><td>Homepage direction, dataset/search experience direction, about or partner page template, help/resource page template, news/article template, general content page template, mobile responsive states, and component annotations.</td><td>Give Dryad’s in-house team practical, implementation-ready design guidance for priority page types.</td></tr>
+            <tr><td><strong>Marketing templates</strong></td><td>Presentation deck cover and content slides, social media announcement cards, and reusable visual style guidance for future communications.</td><td>Help Dryad launch and maintain the refreshed brand consistently across outreach channels.</td></tr>
+            <tr><td><strong>Technical handoff</strong></td><td>Organized source files, export-ready assets, design tokens where appropriate, accessibility notes, implementation meeting, and one post-handoff QA review cycle.</td><td>Support a smooth transition from design approval to internal implementation without unnecessary ambiguity.</td></tr>
+          </tbody>
+        </table>
+        <div class="concept-intro"><strong>Illustrative samples of requested deliverables:</strong> The following concept samples are included to show the type of thinking CivicFirm would bring to the logo, brand system, accessible web templates, and marketing materials Dryad requested. These are intentionally preliminary, not final design recommendations; the actual creative direction would be co-designed with Dryad after discovery, stakeholder input, accessibility review, and technical implementation planning.</div>
+        <div class="concept-gallery" aria-label="Illustrative sample concepts for Dryad requested deliverables">
+          <article class="concept-panel wide">
+            <div class="concept-head"><span>Logo system sample</span><h3>Three early identity directions to explore, not final marks.</h3></div>
+            <div class="concept-body">
+              <div class="logo-samples">
+                <div class="logo-tile"><div><div class="logo-mark-demo">d</div><strong>Rooted data</strong><p>A refined evolution of Dryad’s tree/data-dot equity, connecting growth, stewardship, and reusable data.</p></div></div>
+                <div class="logo-tile"><div><div class="logo-mark-demo alt">D</div><strong>Global repository</strong><p>A circular mark suggesting a trusted international network for research data across disciplines.</p></div></div>
+                <div class="logo-tile"><div><div class="logo-mark-demo line">dy</div><strong>Scholarly utility</strong><p>A restrained typographic route emphasizing credibility, clarity, and a mature nonprofit infrastructure presence.</p></div></div>
+              </div>
+              <p class="asset-caption">A full engagement would test logo concepts at favicon size, header lockup size, slide-title size, and against accessibility and contrast requirements.</p>
+            </div>
+          </article>
+          <article class="concept-panel">
+            <div class="concept-head"><span>Color and type sample</span><h3>A palette that keeps trust, science, and service in balance.</h3></div>
+            <div class="concept-body">
+              <div class="palette-row" aria-label="Sample Dryad palette">
+                <div class="swatch" style="background:#0f3d2e;">Forest Trust<small>#0F3D2E</small></div>
+                <div class="swatch" style="background:#006e87;">Data Teal<small>#006E87</small></div>
+                <div class="swatch" style="background:#00a95c;">Curation Green<small>#00A95C</small></div>
+                <div class="swatch" style="background:#113f67;">Scholarly Blue<small>#113F67</small></div>
+                <div class="swatch" style="background:#c99b3f; color:#111715;">Warm Signal<small>#C99B3F</small></div>
+              </div>
+              <div class="type-demo"><div class="display">Trusted, simple, community driven.</div><div class="body">Sample typography direction: a contemporary, highly legible sans serif for interface clarity paired with generous spacing, strong hierarchy, and accessible contrast.</div></div>
+            </div>
+          </article>
+          <article class="concept-panel">
+            <div class="concept-head"><span>Accessible web sample</span><h3>Homepage and search-first platform direction.</h3></div>
+            <div class="concept-body">
+              <div class="web-mock" aria-label="Sample Dryad website template concept">
+                <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span></div>
+                <div class="mock-hero">
+                  <div class="mock-left"><small>Dryad Data Platform</small><h4>Publish research data with confidence.</h4><p>Human curation, clear compliance, and reusable datasets for science and medicine.</p></div>
+                  <div class="mock-right"><div class="mock-search">Search datasets, authors, institutions, or DOI</div><div class="mock-card"><strong>Submit data</strong><span>Guided workflow for researchers</span></div><div class="mock-card"><strong>Review and curate</strong><span>Quality control with expert support</span></div><div class="mock-card"><strong>Cite and reuse</strong><span>Persistent identifiers and clear metadata</span></div></div>
+                </div>
+              </div>
+              <p class="asset-caption">This sample shows the kind of template language CivicFirm would refine for Dryad’s homepage, dataset/search, resource, and content pages.</p>
+            </div>
+          </article>
+          <article class="concept-panel wide">
+            <div class="concept-head"><span>Marketing template samples</span><h3>Launch-ready social and presentation directions in the same system.</h3></div>
+            <div class="concept-body">
+              <div class="marketing-mocks">
+                <div class="social-card"><div><small>Dryad Data</small><h4>Research data that is easier to publish, cite, and reuse.</h4></div><p>Sample social announcement card for a brand refresh or curator-led data publishing campaign.</p></div>
+                <div class="slide-card"><div class="slide-title">A premier nonprofit data publisher for science and medicine.</div><div class="slide-chart"><div class="bar" style="height:45%;"></div><div class="bar" style="height:72%;"></div><div class="bar" style="height:58%;"></div><div class="bar" style="height:86%;"></div></div><p class="asset-caption">Sample slide direction: clear headline, calm data-forward visual system, strong contrast, and modular components for Dryad’s staff to reuse.</p></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="timeline" role="tabpanel" aria-labelledby="timeline-label">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker" id="timeline-label">04 · Suggested timeline</div>
+          <h2>A 10-week engagement with defined review points.</h2>
+        </div>
+        <p>This timeline assumes timely access to relevant brand materials, existing website context, stakeholder availability, and consolidated feedback at each review milestone.</p>
+      </div>
+      <div class="section-body">
+        <div class="timeline" aria-label="Suggested project timeline">
+          <div class="timeline-item"><div class="week">Week 1</div><div><h3>Kickoff and discovery</h3><p>Confirm goals, audiences, decision process, technical constraints, accessibility expectations, and success criteria.</p></div></div>
+          <div class="timeline-item"><div class="week">Week 2</div><div><h3>Brand strategy brief</h3><p>Deliver positioning, voice, visual principles, and creative evaluation criteria for approval before design exploration.</p></div></div>
+          <div class="timeline-item"><div class="week">Weeks 3–4</div><div><h3>Logo and identity concepts</h3><p>Present two to three identity routes with logo, palette, typography, and system implications.</p></div></div>
+          <div class="timeline-item"><div class="week">Weeks 5–6</div><div><h3>Selected identity refinement</h3><p>Refine the chosen direction, test accessibility considerations, and prepare the core identity system.</p></div></div>
+          <div class="timeline-item"><div class="week">Weeks 7–8</div><div><h3>Web template design</h3><p>Design priority page templates, responsive states, and reusable components for Dryad’s technical team.</p></div></div>
+          <div class="timeline-item"><div class="week">Week 9</div><div><h3>Marketing templates</h3><p>Develop presentation and social templates aligned with the approved identity and web direction.</p></div></div>
+          <div class="timeline-item"><div class="week">Week 10</div><div><h3>Final handoff and QA support</h3><p>Package assets, conduct a handoff meeting, and provide one review cycle for implementation questions.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience" role="tabpanel" aria-labelledby="experience-label">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker" id="experience-label">05 · Relevant experience</div>
+          <h2>CivicFirm is built for organizations whose work matters to communities.</h2>
+        </div>
+        <p>CivicFirm’s work focuses on accessible, compliant, thoughtfully designed websites and digital systems for governments, nonprofits, public-good organizations, and community-serving institutions. Dryad can review selected public work on <a href="https://civicfirm.com/#work">civicfirm.com</a>, and we would be happy to schedule a short walkthrough of additional branding, identity, and visual-system work that is not fully represented in the public portfolio.</p>
+      </div>
+      <div class="section-body">
+        <div class="grid-2">
+          <div class="card"><h3>Accessibility and compliance fluency</h3><p>CivicFirm’s services emphasize custom accessible websites built to WCAG 2.1 AA, ADA Title II, and Section 508-aligned expectations. For Dryad, that means accessibility is not a late-stage checklist; it is part of design strategy, color decisions, typography, templates, and handoff documentation.</p></div>
+          <div class="card"><h3>Public-good and nonprofit context</h3><p>CivicFirm is accustomed to work that must satisfy multiple stakeholders, procurement expectations, public trust, and long-term maintainability. That is a strong fit for a nonprofit research data publisher with communications, leadership, and technical stakeholders.</p></div>
+          <div class="card"><h3>Brand and content strategy</h3><p>The proposed work draws on CivicFirm’s service offering in brand and content strategy: developing voice, visual language, and information architecture that clearly communicate mission and public value.</p></div>
+          <div class="card"><h3>Implementation-aware design</h3><p>Because Dryad’s in-house team will implement the live site, our work will prioritize practical file organization, responsive templates, reusable components, and clear design notes rather than abstract presentation-only visuals.</p></div>
+        </div>
+        <div class="note"><strong>Relevant samples and walkthrough available:</strong> Dryad asked for relevant samples as part of the proposal. The five examples below are visible through CivicFirm’s public website and show work connected to research communication, accessible platforms, nonprofit outreach, and public-good digital systems. Because some of our most relevant branding work is better explained through before-and-after context, rationale, and implementation details, CivicFirm would also be glad to walk Dryad through additional identity and branding examples in a short review call.</div>
+        <div class="sample-grid" aria-label="Relevant CivicFirm sample work">
+          <article class="sample-card">
+            <span class="sample-tag">Research & data governance</span>
+            <h3>Research Circle</h3>
+            <p><strong>Knowledge mobilization platform.</strong> Digital infrastructure for community-led research, data sovereignty, and accessible knowledge sharing.</p>
+            <p class="relevance"><strong>Why it matters for Dryad:</strong> Closely aligned with research communication, data stewardship, audience trust, and accessible knowledge-sharing systems.</p>
+          </article>
+          <article class="sample-card">
+            <span class="sample-tag">Health equity & AI research</span>
+            <h3>Kinship AI</h3>
+            <p><strong>Indigenous-led health AI research hub.</strong> A research platform co-designing equitable AI-enabled healthcare systems through Indigenous-led, community-grounded participatory approaches and cross-cultural collaboration.</p>
+            <p class="relevance"><strong>Why it matters for Dryad:</strong> Demonstrates sensitive communication for complex research, emerging technology, institutional credibility, and community-centered governance.</p>
+          </article>
+          <article class="sample-card">
+            <span class="sample-tag">Public health & wellness</span>
+            <h3>EagleFeather</h3>
+            <p><strong>National health resource directory.</strong> A searchable, WCAG-compliant health directory serving communities across all 13 provinces and territories.</p>
+            <p class="relevance"><strong>Why it matters for Dryad:</strong> Relevant to searchable information architecture, accessible design, national-scale service delivery, and user guidance.</p>
+          </article>
+          <article class="sample-card">
+            <span class="sample-tag">K–12 & early education</span>
+            <h3>Tucson Tots</h3>
+            <p><strong>Family enrollment and outreach platform.</strong> A standards-compliant website for a licensed early learning institution, built to drive enrollment, communicate with families, and meet district accessibility requirements.</p>
+            <p class="relevance"><strong>Why it matters for Dryad:</strong> Shows CivicFirm’s ability to make institutional services clear, trustworthy, accessible, and action-oriented for nontechnical users.</p>
+          </article>
+          <article class="sample-card">
+            <span class="sample-tag">Nonprofit & community media</span>
+            <h3>Visio</h3>
+            <p><strong>Community media production hub.</strong> A multi-format media platform supporting public outreach, grant reporting, and community storytelling.</p>
+            <p class="relevance"><strong>Why it matters for Dryad:</strong> Relevant to brand storytelling, reusable communications templates, social content, and public-facing nonprofit outreach.</p>
+          </article>
+        </div>
+        <table style="margin-top:1.25rem;" aria-label="Sample relevance summary">
+          <thead><tr><th>Sample</th><th>Most relevant Dryad need</th><th>Review link</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Research Circle</strong></td><td>Research and data governance communication; accessible knowledge sharing.</td><td><a href="https://civicfirm.com/#work">View on CivicFirm</a></td></tr>
+            <tr><td><strong>Kinship AI</strong></td><td>Research-sector credibility, sensitive technology communication, and community-grounded process.</td><td><a href="https://civicfirm.com/#work">View on CivicFirm</a></td></tr>
+            <tr><td><strong>EagleFeather</strong></td><td>Searchable resource design, WCAG-compliant user pathways, and public health information access.</td><td><a href="https://civicfirm.com/#work">View on CivicFirm</a></td></tr>
+            <tr><td><strong>Tucson Tots</strong></td><td>Accessible institutional service design and clear user conversion paths.</td><td><a href="https://civicfirm.com/#work">View on CivicFirm</a></td></tr>
+            <tr><td><strong>Visio</strong></td><td>Nonprofit storytelling, public outreach, and reusable media communication systems.</td><td><a href="https://civicfirm.com/#work">View on CivicFirm</a></td></tr>
+          </tbody>
+        </table>
+        <p class="fineprint" style="margin-top:1rem;">All listed samples are drawn from CivicFirm’s public work section at civicfirm.com. We can provide a live walkthrough of additional branding, logo, campaign, and visual-system examples if Dryad would like to review deeper creative work before selection.</p>
+      </div>
+    </section>
+
+    <section class="section" id="investment" role="tabpanel" aria-labelledby="investment-label">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker" id="investment-label">06 · Bid</div>
+          <h2>A fixed-fee engagement for a complete brand and template system.</h2>
+        </div>
+        <p>The bid below is calibrated to be practical for a nonprofit brand refresh while still giving the work enough strategy, design exploration, accessibility review, and implementation handoff time to be done well. It can be adjusted if Dryad would like to expand or reduce the number of templates, concept rounds, or post-handoff support.</p>
+      </div>
+      <div class="section-body">
+        <div class="investment">
+          <div class="price-card">
+            <div class="price-label">Proposed fixed fee</div>
+            <div class="price">$22,500</div>
+            <p>USD, inclusive of discovery, brand identity, accessible web template design, marketing templates, source files, and handoff support as described in this proposal.</p><p class="fineprint" style="margin-top:0.75rem;">This figure is intended to be appropriately scoped: not inflated with full website implementation costs, but not underpriced in a way that would compromise strategy, accessibility, or design quality.</p>
+          </div>
+          <div class="card">
+            <h3>Included assumptions</h3>
+            <p>The bid assumes one kickoff meeting, up to four stakeholder working sessions, two to three initial identity directions, one selected direction for refinement, the web and marketing templates listed above, two consolidated feedback rounds per major phase, organized design source files, one implementation-oriented handoff meeting, and one post-handoff QA review cycle.</p>
+            <div class="note"><strong>Optional support:</strong> Post-project support, additional templates, implementation QA, or ongoing brand governance can be provided under a separate monthly support agreement or hourly authorization.</div>
+            <p class="fineprint">This proposal is valid for 30 days and assumes the project can begin within a mutually agreed schedule after selection.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="next" role="tabpanel" aria-labelledby="next-label">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker" id="next-label">07 · Next steps</div>
+          <h2>We would welcome the opportunity to help Dryad express its next chapter.</h2>
+        </div>
+        <p>CivicFirm is ready to begin with a focused discovery process and a practical, collaborative plan that supports Dryad’s leadership, communications staff, and in-house technical team.</p>
+      </div>
+      <div class="section-body">
+        <div class="closing">
+          <h2>Thank you for considering CivicFirm.</h2>
+          <p class="lead-paragraph">Dryad’s work advances the availability and reuse of research data. CivicFirm’s role would be to make that value easier to see, easier to trust, and easier to carry consistently across the public-facing moments where researchers, institutions, publishers, societies, funders, and partners encounter the Dryad brand.</p>
+          <div class="contact-box" aria-label="Contact details">
+            <div class="card"><h3>Primary contact</h3><p><strong>CivicFirm Team</strong><br />CivicFirm<br /><a href="mailto:info@civicfirm.com">info@civicfirm.com</a></p></div>
+            <div class="card"><h3>Website</h3><p><a href="https://civicfirm.com/">civicfirm.com</a><br />Accessible web design for organizations that matter.</p></div>
+            <div class="card"><h3>Submission</h3><p>Prepared for email submission to <a href="mailto:partnerships@dryad.org">partnerships@dryad.org</a>.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="references" role="tabpanel" aria-labelledby="references-label">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker" id="references-label">References</div>
+          <h2>Sources reviewed</h2>
+        </div>
+        <p>This proposal was prepared from Dryad’s public RFP, Dryad’s current platform language, and CivicFirm’s public website positioning.</p>
+      </div>
+      <div class="section-body">
+        <ol class="source-list">
+          <li><a href="https://blog.datadryad.org/2026/05/05/request-for-proposals-brand-refresh-and-logo-redesign/">Dryad news: Request for proposals: Brand refresh and logo redesign</a>.</li>
+          <li><a href="https://datadryad.org/">Dryad: Publish and preserve your data</a>.</li>
+          <li><a href="https://civicfirm.com/">CivicFirm: Accessible Websites for Public Organizations</a>.</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <button class="show-all-toggle" type="button" id="showAllButton">Show full proposal</button>
+
+  <footer class="footer">
+    <p><strong>Prepared by CivicFirm.</strong> This HTML proposal is self-contained, responsive, and print-friendly. Replace bracketed contact details before submission. If desired, use the “Print / Save” control to export a PDF from the browser print dialog, or send the HTML file directly as a polished digital response.</p>
+  </footer>
+
+  <script>
+    const buttons = Array.from(document.querySelectorAll('.tab-button'));
+    const sections = Array.from(document.querySelectorAll('.section'));
+    const showAllButton = document.getElementById('showAllButton');
+
+    function showSection(id) {
+      document.body.classList.remove('show-all');
+      sections.forEach(section => section.classList.toggle('active', section.id === id));
+      buttons.forEach(button => button.setAttribute('aria-selected', button.dataset.target === id ? 'true' : 'false'));
+      const target = document.getElementById(id);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      showAllButton.textContent = 'Show full proposal';
+    }
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => showSection(button.dataset.target));
+    });
+
+    showAllButton.addEventListener('click', () => {
+      const showingAll = document.body.classList.toggle('show-all');
+      sections.forEach(section => section.classList.toggle('active', showingAll ? false : section.id === 'understanding'));
+      buttons.forEach(button => button.setAttribute('aria-selected', 'false'));
+      showAllButton.textContent = showingAll ? 'Show section tabs' : 'Show full proposal';
+      if (showingAll) document.getElementById('proposal').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      else showSection('understanding');
+    });
+  </script>
+</body>
+</html>
