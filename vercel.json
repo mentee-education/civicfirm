@@ -19,7 +19,8 @@
     { "source": "/gtalenders/:path*", "destination": "/gtalenders/index.html" },
     { "source": "/duck/website", "destination": "/duck/website/index.html" },
     { "source": "/duck/website/", "destination": "/duck/website/index.html" },
-    { "source": "/duck/website/:path*", "destination": "/duck/website/index.html" }
+    { "source": "/duck/website/:path*", "destination": "/duck/website/index.html" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
   "redirects": [
     { "source": "/bb", "destination": "/bb/proposal", "permanent": false },
