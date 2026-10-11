@@ -21,17 +21,6 @@ export const projects = [
     featured: false,
   },
   {
-    name: "Pure Thai",
-    sector: "Wellness & Spa",
-    descriptor: "Luxury Thai massage & wellness",
-    summary:
-      "An elegant, brand-forward website for a premium Thai massage studio — designed to communicate luxury, build trust, and drive bookings.",
-    image: "/portfolio/purethai-hero.png",
-    url: "https://purethai.ca",
-    accent: "#c084fc",
-    featured: false,
-  },
-  {
     name: "GoGo Wellness Clinic",
     sector: "Wellness & Beauty",
     descriptor: "Holistic wellness clinic",
@@ -54,17 +43,6 @@ export const projects = [
     featured: true,
   },
   {
-    name: "Bravik Contracting",
-    sector: "Renovation & Contracting",
-    descriptor: "Home renovation contractor",
-    summary:
-      "A professional, trust-building website for a residential renovation contractor — showcasing completed projects, services, and client testimonials to generate qualified leads.",
-    image: "/portfolio/bravik-hero.png",
-    url: "https://bravik.ca",
-    accent: "#64a0ff",
-    featured: false,
-  },
-  {
     name: "Stitch Deliver",
     sector: "Home Services",
     descriptor: "Mobile alterations & tailoring",
@@ -73,17 +51,6 @@ export const projects = [
     image: "/portfolio/stitchdeliver-hero.png",
     url: "https://stitchdeliver.ca",
     accent: "#ec4899",
-    featured: false,
-  },
-  {
-    name: "Lendia",
-    sector: "Financial Services",
-    descriptor: "Mortgage lending company",
-    summary:
-      "A professional, trust-building website for a mortgage lender — designed to generate leads, explain products, and build confidence.",
-    image: "/portfolio/lendia-hero.png",
-    url: "https://lendia.ca",
-    accent: "#d4a44c",
     featured: false,
   },
   {
