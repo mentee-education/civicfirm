@@ -54,6 +54,17 @@ export const projects = [
     featured: false,
   },
   {
+    name: "Room for Being",
+    sector: "Coaching & Wellness",
+    descriptor: "Personal discovery practice",
+    summary:
+      "A calm, editorial website for a personal discovery and transformation practice — designed to set the tone, explain the work, and invite a first conversation.",
+    image: "/portfolio/roomforbeing-hero.png",
+    url: "https://roomforbeing.com",
+    accent: "#a3b18a",
+    featured: false,
+  },
+  {
     name: "Becker's Bridal",
     sector: "Retail & Bridal",
     descriptor: "Toronto's oldest bridal boutique",
@@ -239,8 +250,8 @@ export default function Work() {
           ))}
         </div>
 
-        {/* Standard row — 3 equal cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {/* Standard row — 4 equal cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {standard.map((project, i) => (
             <ProjectCard
               key={project.name}
