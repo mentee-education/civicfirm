@@ -71,7 +71,7 @@ export const projects = [
     summary:
       "An elegant, appointment-driven website for a heritage bridal boutique — celebrating 80+ years of trust with modern booking and collection showcases.",
     image: "/portfolio/beckers-hero.png",
-    url: "",
+    url: "https://www.beckersbridalboutique.com",
     accent: "#d4a574",
     featured: true,
   },
