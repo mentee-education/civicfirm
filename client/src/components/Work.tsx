@@ -238,26 +238,10 @@ export default function Work() {
           </motion.p>
         </div>
 
-        {/* Featured row — 2 cards side by side */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-6 md:mb-8">
-          {featured.map((project, i) => (
-            <ProjectCard
-              key={project.name}
-              project={project}
-              index={i}
-              featured
-            />
-          ))}
-        </div>
-
-        {/* Standard row — 4 equal cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {standard.map((project, i) => (
-            <ProjectCard
-              key={project.name}
-              project={project}
-              index={i + 2}
-            />
+        {/* All projects — 3 across, featured ones first */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {[...featured, ...standard].map((project, i) => (
+            <ProjectCard key={project.name} project={project} index={i} />
           ))}
         </div>
 
